@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GITHUB REPOSITORY TOPIC SEARCH COUNT</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- favicon  -->
+    <link rel="icon" href="https://github.com/favicon.ico" type="image/x-icon">
+	
+    <style>
+        /* Add your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .target-cursor {
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            animation: moveCursor 0.3s infinite alternate;
+        }
+
+        @keyframes moveCursor {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+    </style>
+	</head>
+<body>
+<div class="target-cursor"></div>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 8px;
+            background-image: url('https://wallpaperaccess.com/full/1567770.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: BLACK;
+            background-color: ORANGE;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            padding: 10px;
+			border-radius: 34px;
+            display: inline-block;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            width: 80%;
+			border-radius: 34px;
+            max-width: 300px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: red;
+            color: #fff;
+            cursor: pointer;
+            width: 20%;
+			    border-radius: 34px;
+            max-width: 100px;
+        }
+
+        #gists-count {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            input[type="text"] {
+                width: 60%;
+            }
+
+            button {
+                width: 40%;
+            }
+        }
+		.buttons-container {
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: black; /* Text color */
+  background-color: silver; /* Button background color */
+  border: 1px solid #3498db; /* Add a border to the button */
+  border-radius: 34px;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.button:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+  border-color: #2980b9; /* Change the border color on hover */
+}
+ #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+<div class="container">
+  <p align="center">
+    <img
+    style="display: block;"
+    src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=30&duration=5001&color=8B0000&vCenter=true&center=true&width=460&lines=WELCOME+TO+GITHUB+;REPOSITORIES+TOPIC+SEARCH+;HAPPY+SEARCHING....!">
+</p>
+<br>
+<br>
+<div class="buttons-container">
+  <a href="mailto:as5977695@gmail.com" class="button">Contact Me</a>
+  <br><br>
+  <a href="https://github.com/Ashwini767" class="button">GitHub Account</a>
+    </div>
+    <div class="container">
+        <h1>GITHUB REPOSITORY TOPIC SEARCH COUNT</h1>
+<br><br>
+<div id="app">
+    <input type="text" id="topicInput" placeholder="Enter a github topic.." value="">
+    <button onclick="searchRepositories()">Search</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    async function searchRepositories() {
+        const topic = document.getElementById('topicInput').value;
+        const apiUrl = `https://api.github.com/search/repositories?q=topic:${topic}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+
+            const totalCount = data.total_count;
+            const resultHTML = `<p> TOTAL = <span>${totalCount}</span></p>`;
+            document.getElementById('result').innerHTML = resultHTML;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    // Add event listener for Enter key
+    document.getElementById('topicInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            searchRepositories();
+        }
+    });
+</script>
+<br>
+<a class="button">Copyright ® Developed By Ashwini</a>
+<script>
+    // Custom cursor
+    const targetCursor = document.querySelector('.target-cursor');
+    document.addEventListener('mousemove', (e) => {
+        targetCursor.style.left = e.clientX + 'px';
+        targetCursor.style.top = e.clientY + 'px';
+    });
+</script>
+<script src="https://www.drv.tw/inc/wd.js?s=yashawanthtechprojects"></script></body>
+</html>
